@@ -1,5 +1,5 @@
 import glob
-from get_planet import *
+from Kehan.get_planet import *
 from os.path import exists
 
 
