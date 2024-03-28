@@ -66,27 +66,27 @@ def search_payload(item_type,asset_type,geom,start,end,cloud_cover):
 
     # get images that overlap with our AOI 
     geometry_filter = {
-        "type": "GeometryFilter",
-        "field_name": "geometry",
-        "config": geom
+      "type": "GeometryFilter",
+      "field_name": "geometry",
+      "config": geom
     }
 
     date_range_filter = {
-        "type": "DateRangeFilter",
-        "field_name": "acquired",
-        "config": {
+      "type": "DateRangeFilter",
+      "field_name": "acquired",
+      "config": {
         "gte": time2utc(start),
         "lte": time2utc(end)
-        }
+      }
     }
 
     # only get images which have <10% cloud coverage
     cloud_cover_filter = {
-        "type": "RangeFilter",
-        "field_name": "cloud_cover",
-        "config": {
+      "type": "RangeFilter",
+      "field_name": "cloud_cover",
+      "config": {
         "lte": cloud_cover
-        }
+      }
     }
 
     asset_filter = {
@@ -101,16 +101,16 @@ def search_payload(item_type,asset_type,geom,start,end,cloud_cover):
 
     # combine our geo, date, cloud filters
     combined_filter = {
-        "type": "AndFilter",
-        "config": [geometry_filter, date_range_filter, cloud_cover_filter,asset_filter,quality]
+      "type": "AndFilter",
+      "config": [geometry_filter, date_range_filter, cloud_cover_filter,asset_filter,quality]
     }
 
     #item_type = "PSScene4Band"
 
     # API request object
     search_request = {
-        "item_types": [item_type], 
-        "filter": combined_filter
+      "item_types": [item_type], 
+      "filter": combined_filter
     }
     return search_request
 
@@ -144,7 +144,7 @@ def ft_iterate(item_type,asset_type,geom,start,end,cloud_cover,ovp):
     search_json = search_payload(item_type,asset_type,geom,start,end,cloud_cover)
     all_features = list(
         yield_features('https://api.planet.com/data/v1/quick-search',
-                        HTTPBasicAuth(PLANET_API_KEY, ''), search_json))
+                       HTTPBasicAuth(PLANET_API_KEY, ''), search_json))
     image_ids = [x['id'] for x in all_features]
     aoi_shape = shape(geom)
     for ids in image_ids:
@@ -301,11 +301,11 @@ def order_payload(Name_download, ID_imgs, File_geom):
         geometry = json.load(f)['features'][0]['geometry']
         
     payload = {
-        "name":Name_download, # change order name to whatever you would like (name is not unique)
-        "order_type":"partial", # the partial option here allows for an order to complete even if few items fail
-        "notifications":{
-            "email": True
-        },
+         "name":Name_download, # change order name to whatever you would like (name is not unique)
+         "order_type":"partial", # the partial option here allows for an order to complete even if few items fail
+         "notifications":{
+             "email": True
+         },
         "products":[  
             {  
                 "item_ids":ID_imgs,#idlist,
