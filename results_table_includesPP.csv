@@ -1,0 +1,13 @@
+model,code,F1 Score,Precision,Recall,Accuracy
+Base,Canopy Pixels,0.77 ± 0.02,0.92 ± 0.08,0.7 ± 0.0,0.75 ± 0.03
+Base,Open Pixels,0.93 ± 0.03,0.92 ± 0.03,0.95 ± 0.04,0.89 ± 0.04
+Base,All Pixels,0.86 ± 0.02,0.92 ± 0.04,0.82 ± 0.01,0.81 ± 0.02
+Base (S+T),Canopy Pixels,0.88 ± 0.03,0.94 ± 0.05,0.84 ± 0.02,0.83 ± 0.05
+Base (S+T),Open Pixels,0.94 ± 0.03,0.9 ± 0.05,0.98 ± 0.01,0.9 ± 0.05
+Base (S+T),All Pixels,0.91 ± 0.03,0.92 ± 0.05,0.9 ± 0.01,0.86 ± 0.05
+Composite,Canopy Pixels,0.84 ± 0.04,0.88 ± 0.11,0.82 ± 0.02,0.8 ± 0.02
+Composite,Open Pixels,0.93 ± 0.03,0.92 ± 0.05,0.94 ± 0.05,0.89 ± 0.05
+Composite,All Pixels,0.89 ± 0.03,0.91 ± 0.06,0.87 ± 0.02,0.84 ± 0.03
+compositeT,Canopy Pixels,0.86 ± 0.05,0.88 ± 0.11,0.86 ± 0.01,0.83 ± 0.04
+compositeT,Open Pixels,0.94 ± 0.02,0.92 ± 0.04,0.96 ± 0.03,0.9 ± 0.03
+compositeT,All Pixels,0.9 ± 0.03,0.9 ± 0.05,0.91 ± 0.0,0.86 ± 0.04
